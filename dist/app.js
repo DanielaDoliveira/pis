@@ -18,6 +18,7 @@ class App{
   }
 
   middleware(){
+    this.server.use(_cors2.default.call(void 0, ));
      this.server.use(_express2.default.json());
   }
   routes(){
