@@ -3,13 +3,13 @@
 class RankingController{
 
   async index (req,res){
-   
-   const all = await _User2.default.find().sort({"record":-1});
+   const {limit} = req.query || 10;
+   const all = await _User2.default.find().limit(limit).sort({"record":-1});
    return res.json(all);
 
   }
 
-
+ 
 }
 
 exports. default = new RankingController();

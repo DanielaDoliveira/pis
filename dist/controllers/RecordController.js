@@ -33,6 +33,8 @@ class RecordController{
     await _User2.default.findOneAndDelete({_id:id})
     return res.json({message: "Excluído com sucesso!"})
    }
+
+  
 }
 
 exports. default = new RecordController();
