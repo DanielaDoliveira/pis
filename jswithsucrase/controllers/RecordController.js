@@ -1,4 +1,4 @@
-"use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _User = require('../models/User'); var _User2 = _interopRequireDefault(_User);
+import User from "../models/User";
 
 class RecordController{
   async store(req,res){
@@ -9,7 +9,7 @@ class RecordController{
    {
       if(username!= "")
       {
-        const ranking_board = await _User2.default.create({
+        const ranking_board = await User.create({
           username,
           record
         });
@@ -30,11 +30,11 @@ class RecordController{
    async destroy(req,res){
     const {username} = req.body;
     const {id} = req.headers;
-    await _User2.default.findOneAndDelete({_id:id})
+    await User.findOneAndDelete({_id:id})
     return res.status(200).json({message: "Excluído com sucesso!"})
    }
 
   
 }
 
-exports. default = new RecordController();
+export default new RecordController();

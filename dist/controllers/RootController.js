@@ -6,7 +6,7 @@ _path2.default = require('path');
 class RootController{
  async index(req,res){
 
-  return res.sendFile(_path2.default.resolve(__dirname,'..','Files','information.html'));
+  return res.status(200).sendFile(_path2.default.resolve(__dirname,'..','Files','information.html'));
 }
 
 }

@@ -5,7 +5,7 @@ class RankingController{
   async index (req,res){
    const {limit} = req.query || 10;
    const all = await _User2.default.find().limit(limit).sort({"record":-1});
-   return res.json(all);
+   return res.status(200).json(all);
 
   }
 
