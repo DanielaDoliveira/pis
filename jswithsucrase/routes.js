@@ -10,9 +10,13 @@ import RecordController from './controllers/RecordController';
 const routes = new Router();
 
 routes.get('/',RootController.index);
+
 routes.get('/ranking',RankingController.index);
 routes.post('/postrecord',RecordController.store);
+routes.put('/ranking/:user_id',RankingController.update);
 routes.delete('/deleterecord',RecordController.destroy);
+
+
 
 
 

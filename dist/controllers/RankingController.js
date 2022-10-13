@@ -9,7 +9,15 @@ class RankingController{
 
   }
 
- 
+ async update (req, res){
+  const {user_id} = req.params;
+  const {username} = req.body;
+  const user = await _User2.default.updateOne({_id: user_id}, {
+    username,
+    
+  })
+  res.status(200).json(user);
+ }
 }
 
 exports. default = new RankingController();

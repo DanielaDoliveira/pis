@@ -10,9 +10,13 @@ var _RecordController = require('./controllers/RecordController'); var _RecordCo
 const routes = new (0, _express.Router)();
 
 routes.get('/',_RootController2.default.index);
+
 routes.get('/ranking',_RankingController2.default.index);
 routes.post('/postrecord',_RecordController2.default.store);
+routes.put('/ranking/:user_id',_RankingController2.default.update);
 routes.delete('/deleterecord',_RecordController2.default.destroy);
+
+
 
 
 
